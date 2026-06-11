@@ -1,0 +1,12 @@
+#!/bin/bash
+# Installe nginx et affiche l'AZ de l'instance. ${az} vient de templatefile().
+set -euxo pipefail
+
+dnf update -y
+dnf install -y nginx
+
+cat > /usr/share/nginx/html/index.html <<HTML
+Hello from AZ ${az}
+HTML
+
+systemctl enable --now nginx

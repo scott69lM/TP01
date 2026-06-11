@@ -1,0 +1,27 @@
+# ------------------------------------------------------------------
+# .gitignore — Terraform
+# ------------------------------------------------------------------
+
+# Répertoire de travail et plugins providers
+.terraform/
+.terraform.lock.hcl
+
+# State (peut contenir des secrets en clair) — jamais commité ici
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Fichiers de variables sensibles (IP perso, secrets…)
+terraform.tfvars
+*.auto.tfvars
+
+# Plans binaires
+*.tfplan
+crash.log
+crash.*.log
+
+# Overrides locaux
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
